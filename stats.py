@@ -11,7 +11,7 @@ def get_num_words():
     list_of_words = book_to_analyze.split()
     #number_of_words = list_of_words.count()
 
-    print(f"Found {len(list_of_words)} total words")
+    return{len(list_of_words)}
 
 def get_num_chars():
     
@@ -24,7 +24,25 @@ def get_num_chars():
     for item in chars_list:
         dict_of_chars[item.lower()] = dict_of_chars.get(item.lower(), 0) + 1
      
-    print(dict_of_chars)
+    return(dict_of_chars)
 
-get_num_chars()
+def sort_on(items):
+    return items["num"]
+
+def sorted_char_count(my_dict):
+    list_of_char_count = []
+
+    for key, value in my_dict.items():
+        list_of_char_count.append({"char": key, "num": value})
+    
+    list_of_char_count.sort(reverse=True, key=sort_on)
+
+    return(list_of_char_count)
+
+
+print(sorted_char_count(get_num_chars()))
+
+
+
+
 
