@@ -5,18 +5,18 @@ def get_books_text(path_to_book):
 
     return file_contents
 
-def get_num_words():
-    book_to_analyze = get_books_text("./books/frankenstein.txt")
+def get_num_words(path_to_book):
+    book_to_analyze = get_books_text(path_to_book)
 
     list_of_words = book_to_analyze.split()
     #number_of_words = list_of_words.count()
 
     return(len(list_of_words))
 
-def get_num_chars():
+def get_num_chars(path_to_book):
     
     dict_of_chars = {}
-    string_of_book = get_books_text("./books/frankenstein.txt")
+    string_of_book = get_books_text(path_to_book)
     
     chars_list = [char for char in string_of_book]
     
